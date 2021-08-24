@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Players</title>
+	</head>
+	<body>
+		<h1>PLAYERS</h1>
+		<ul>
+			<li th:each = "player : ${getAllPlayers}">
+				<a th:href= "@{/player/{tab}(tab=${player.getId()})}">
+					<span th:text = "${player.getId()} + ' ' + ${player.getFirstname()} + ' ' 
+						+ ${player.getLastname()}"></span>
+				</a>
+			</li>
+		</ul>
+	</body>
+</html>
